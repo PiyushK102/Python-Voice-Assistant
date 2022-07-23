@@ -79,7 +79,7 @@ if __name__=="__main__":
 
 
         elif 'play music' in query or 'open music'in query:
-            music_dir = 'M:\\New Songs'
+            music_dir = 'M:\\New Songs'          /*  add your path of music folder */
             songs = os.listdir(music_dir)  
             print('playing music')
             os.startfile(os.path.join(music_dir, songs[0]));
@@ -93,12 +93,12 @@ if __name__=="__main__":
             exit();
         
         elif 'open videos' in query:
-            video_dir = 'V:\\Video'
+            video_dir = 'V:\\Video'             /*  add your path of video folder */
             videos = os.listdir(video_dir)  
             print('playing videos') 
             os.startfile(os.path.join(video_dir, videos[0]))
         elif 'Chrome' in  query:
-            chrome_path='C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+            chrome_path='C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'      /*  add your path of Chrome browser or any other browser */
             speak("Opening chrome")
             os.startfile(os.path.join(chrome_path))
         elif 'WhatsApp' in query:
