@@ -1,5 +1,5 @@
 from locale import format_string
-import pyttsx3
+import pyttsx3                                 # install all these libraries using pip install *library name in your command prompt
 import datetime
 import speech_recognition as sr
 
@@ -10,10 +10,10 @@ import os
 import pywhatkit as pwt
 
 
-engine=pyttsx3.init('sapi5')
+engine=pyttsx3.init('sapi5')                                        # sapi 5 is the voice engine SpeechAPI of Microsoft
 voices=engine.getProperty('voices')#print voices
-print(voices[2].id)
-engine.setProperty('voice',voices[2].id)
+print(voices[2].id)                            
+engine.setProperty('voice',voices[2].id)                            # voice[n] is the voice from the voices in your system
 
 def speak(audio):
     engine.say(audio)
@@ -40,7 +40,7 @@ def takecmnd():
         audio=r.listen(source)
     try:
         print("Recognizing...")   
-        query = r.recognize_google(audio, language ='en-in')
+        query = r.recognize_google(audio, language ='en-in')      # here google speech to text API is used for identifying commands with en-in as Indian English language
         print(f"User said: {query}\n")
   
     except Exception as e:
@@ -121,7 +121,7 @@ if __name__=="__main__":
         elif  'search' in query:
             se= query.replace("search", "")
 
-            speak("showing you the results present on web for"+query)
+            speak("showing you the results from the web for"+query)
             webbrowser.open("https://www.google.com/search?q="+se)
 
         
